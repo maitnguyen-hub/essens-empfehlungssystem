@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essensempfehlungssystem</title>
+    <!-- Verbinden mit CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="introBox">
+        Essensempfehlungssystem
+    </div>
+    
+    <!-- Filter für Ernährungsbedürfnisse -->
+    <div id="filters">
+        <h2>Ernährungsfilter</h2>
+        <label><input type="checkbox" id="vegetarisch" name="vegetarisch"> Vegetarisch</label>
+        <label><input type="checkbox" id="Vegan" name="Vegan"> Vegan</label>
+        <label><input type="checkbox" id="halal" name="halal"> Halal</label>
+        <label><input type="checkbox" id="glutenfrei" name="glutenfrei"> Glutenfrei</label>
+    </div>
+
+    <!-- Tortendiagramm Kategorieauswahl -->
+    <div id="pieChartContainer">
+        <canvas id="pieChart"></canvas>
+
+        <!-- Checkboxen für die Tags -->
+        <div id="tagCheckboxes">
+            <label><input type="checkbox" class="tag" value="Süß"> Süß</label>
+            <label><input type="checkbox" class="tag" value="Salzig"> Salzig</label>
+            <label><input type="checkbox" class="tag" value="Sauer"> Sauer</label>
+            <label><input type="checkbox" class="tag" value="Bitter"> Bitter</label>
+            <label><input type="checkbox" class="tag" value="Herzhaft"> Herzhaft</label>
+
+        </div>
+    </div>
+
+    <!-- Button zum Zurücksetzen der Auswahl -->
+    <button id="resetButton" onclick="resetSelection()">Kategorie zurücksetzen</button>
+
+    <!-- Rezeptvorschläge Tabelle -->
+    <div id="recipesTable">
+        <h2>Rezeptempfehlungen</h2>
+        <table id="recipeTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Name</th>
+                    <th onclick="sortTable(1)">Kategorie</th>
+                    <th onclick="sortTable(2)">Tags</th>
+                    <th onclick="sortTable(3)">Geschmacksrichtung</th>
+                    <th onclick="sortTable(4)">Zutaten</th>
+                    <th onclick="sortTable(5)">Beschreibung</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rezepte werden hier dynamisch eingefügt -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Chart.js Bibliothek -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Verbinden mit JavaScript -->
+    <script src="script.js"></script>
+    <!-- JSON-Daten laden und in die Tabelle einfügen -->
+    
+</body>
+</html>
